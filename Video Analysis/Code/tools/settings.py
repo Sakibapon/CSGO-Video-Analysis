@@ -1,8 +1,9 @@
 import os
 
-dataset_path = "E:/Project 103/Trimmed Data"
+dataset_path = "G:/CSGO Video Analyis/Data"
 death_path = os.path.join(dataset_path, "death/")
 kill_path = os.path.join(dataset_path, "kill/")
+smoke_path = os.path.join(dataset_path, "smoke/")
 NoAction_path = os.path.join(dataset_path, "NoAction/")
 #t_path = os.path.join(dataset_path, "t/")
 train_frames_path_name = 'train_frames'

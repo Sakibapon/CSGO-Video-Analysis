@@ -56,23 +56,23 @@ def split():
     NoAction_videos = accumulate_videos(NoAction_path)
     NoAction_videos = append_label(NoAction_videos, "NoAction")
     train_NoAction_videos, val_NoAction_videos, test_NoAction_videos = split_train_val_test_data(NoAction_videos)
-    #t
-    #t_videos = accumulate_videos(t_path)
-    #t_videos = append_label(t_videos, "t")
-    #train_t_videos, val_t_videos, test_t_videos = split_train_val_test_data(t_videos)
+    #smoke
+    smoke_videos = accumulate_videos(smoke_path)
+    smoke_videos = append_label(smoke_videos, "smoke")
+    train_smoke_videos, val_smoke_videos, test_smoke_videos = split_train_val_test_data(smoke_videos)
 
     #Preparing Dataset
-    train_data_list = train_death_videos + train_kill_videos + train_NoAction_videos #+ train_t_videos
+    train_data_list = train_death_videos + train_kill_videos + train_NoAction_videos + train_smoke_videos
     random.shuffle(train_data_list)
     train = pd.DataFrame(train_data_list, columns = ['Video_url', 'action'])
     train.to_csv(os.path.join(dataset_path, 'train.csv'), index=False)
 
-    val_data_list = val_death_videos + val_kill_videos + val_NoAction_videos #+ val_t_videos
+    val_data_list = val_death_videos + val_kill_videos + val_NoAction_videos + val_smoke_videos
     random.shuffle(val_data_list)
     val = pd.DataFrame(val_data_list, columns = ['Video_url', 'action'])
     val.to_csv(os.path.join(dataset_path, 'val.csv'), index=False)
 
-    test_data_list = test_death_videos + test_kill_videos + test_NoAction_videos #+ test_t_videos
+    test_data_list = test_death_videos + test_kill_videos + test_NoAction_videos + test_smoke_videos
     random.shuffle(test_data_list)
     test = pd.DataFrame(test_data_list, columns = ['Video_url', 'action'])
     test.to_csv(os.path.join(dataset_path, 'test.csv'), index=False)
