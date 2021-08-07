@@ -1,6 +1,6 @@
 import os
 
-dataset_path = "G:/CSGO Video Analyis/Data"
+dataset_path = "F:/Personal/CSGO-Video-Analysis/Video Analysis/Data"
 death_path = os.path.join(dataset_path, "death/")
 kill_path = os.path.join(dataset_path, "kill/")
 smoke_path = os.path.join(dataset_path, "smoke/")
